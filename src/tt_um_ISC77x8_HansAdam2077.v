@@ -49,7 +49,7 @@ module tt_um_ISC77x8_HansAdam2077 (
   // ========================
 
   // uo_out
-  assign uo_out[6:0] = io_disp1;
+  assign uo_out[6:0] = {io_disp1[0], io_disp1[1], io_disp1[2], io_disp1[3], io_disp1[4], io_disp1[5], io_disp1[6]};
   assign uo_out[7]   = io_disp2[6];
 
   // uio_out
