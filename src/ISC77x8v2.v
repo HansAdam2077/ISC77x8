@@ -143,8 +143,8 @@ module ISC77x8v2(
     .io_charData7seg(segConv2_io_charData7seg),
     .io_AtoGsegments(segConv2_io_AtoGsegments)
   );
-  assign io_disp1 = ~segConv1_io_AtoGsegments; // @[\\src\\main\\scala\\ISC77x16.scala 226:13]
-  assign io_disp2 = ~segConv2_io_AtoGsegments; // @[\\src\\main\\scala\\ISC77x16.scala 233:13]
+  assign io_disp1 = segConv1_io_AtoGsegments; // @[\\src\\main\\scala\\ISC77x16.scala 226:13]
+  assign io_disp2 = segConv2_io_AtoGsegments; // @[\\src\\main\\scala\\ISC77x16.scala 233:13]
   assign segConv1_io_charData7seg = 4'h0 == countReg ? charReg0 : _GEN_48; // @[\\src\\main\\scala\\ISC77x16.scala 179:17 180:25]
   assign segConv2_io_charData7seg = 4'h0 == newCount ? charReg0 : _GEN_64; // @[\\src\\main\\scala\\ISC77x16.scala 202:17 203:25]
   always @(posedge clock) begin
