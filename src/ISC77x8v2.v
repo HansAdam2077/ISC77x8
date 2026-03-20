@@ -43,7 +43,6 @@ module ISC77x16(
   input        io_RegPush, // @[\\src\\main\\scala\\ISC77x16.scala 5:14]
   output [6:0] io_disp1, // @[\\src\\main\\scala\\ISC77x16.scala 5:14]
   output [6:0] io_disp2, // @[\\src\\main\\scala\\ISC77x16.scala 5:14]
-  output [3:0] io_an // @[\\src\\main\\scala\\ISC77x16.scala 5:14]
 );
 `ifdef RANDOMIZE_REG_INIT
   reg [31:0] _RAND_0;
@@ -146,7 +145,6 @@ module ISC77x16(
   );
   assign io_disp1 = ~segConv1_io_AtoGsegments; // @[\\src\\main\\scala\\ISC77x16.scala 226:13]
   assign io_disp2 = ~segConv2_io_AtoGsegments; // @[\\src\\main\\scala\\ISC77x16.scala 233:13]
-  assign io_an = 4'he; // @[\\src\\main\\scala\\ISC77x16.scala 235:7]
   assign segConv1_io_charData7seg = 4'h0 == countReg ? charReg0 : _GEN_48; // @[\\src\\main\\scala\\ISC77x16.scala 179:17 180:25]
   assign segConv2_io_charData7seg = 4'h0 == newCount ? charReg0 : _GEN_64; // @[\\src\\main\\scala\\ISC77x16.scala 202:17 203:25]
   always @(posedge clock) begin
