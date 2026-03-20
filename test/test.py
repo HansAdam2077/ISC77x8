@@ -45,7 +45,15 @@ async def test_project(dut):
 
     for i in range(150):
         #dut._log.info(f"uo_out = {dut.uo_out.value} ({int(dut.uo_out.value)})")
-        dut._log.info(f"uo_out[6:0] = {dut.uo_out.value[6:0]}")
+        
+
+        disp2_bit7 = int(dut.uo_out.value[7])     # 1 bit
+        disp2_lower_bits = int(dut.uio_out.value[7:2])   # 7 bits
+
+        combined = (disp2_bit7 << 7) | disp2_lower_bits
+
+        dut._log.info(f"uo_out[6:0] = {dut.uo_out.value[6:0]}, disp 2 = {combined}")
+        
         await ClockCycles(dut.clk, 1)
         
     
