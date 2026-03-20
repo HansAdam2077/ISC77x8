@@ -52,7 +52,7 @@ async def test_project(dut):
 
         combined = (disp2_bit7 << 6) | disp2_lower_bits
 
-        dut._log.info(f"uo_out[6:0] = {dut.uo_out.value[6:0]}, bit 2 fra venstre: {dut.uo_out.value[1]} disp 2 = {combined}")
+        dut._log.info(f"uo_out bit 0 til 7: {dut.uo_out.value[0]} {dut.uo_out.value[1]} {dut.uo_out.value[2]} {dut.uo_out.value[3]} {dut.uo_out.value[4]} {dut.uo_out.value[5]} {dut.uo_out.value[6]} disp 2 = {combined}")
         
         await ClockCycles(dut.clk, 1)
         
