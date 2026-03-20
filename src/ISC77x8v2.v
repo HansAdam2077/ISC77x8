@@ -35,14 +35,14 @@ module displayDecoder(
   wire [6:0] _GEN_30 = 5'h1 == io_charData7seg ? 7'h30 : _GEN_29; // @[\\src\\main\\scala\\ISCdecoder.scala 16:17 18:23]
   assign io_AtoGsegments = 5'h0 == io_charData7seg ? 7'h0 : _GEN_30; // @[\\src\\main\\scala\\ISCdecoder.scala 16:17 17:23]
 endmodule
-module ISC77x16(
+module ISC77x8v2(
   input        clock,
   input        reset,
   input  [3:0] io_RegSelect, // @[\\src\\main\\scala\\ISC77x16.scala 5:14]
   input  [4:0] io_loadVal, // @[\\src\\main\\scala\\ISC77x16.scala 5:14]
   input        io_RegPush, // @[\\src\\main\\scala\\ISC77x16.scala 5:14]
   output [6:0] io_disp1, // @[\\src\\main\\scala\\ISC77x16.scala 5:14]
-  output [6:0] io_disp2, // @[\\src\\main\\scala\\ISC77x16.scala 5:14]
+  output [6:0] io_disp2 // @[\\src\\main\\scala\\ISC77x16.scala 5:14]
 );
 `ifdef RANDOMIZE_REG_INIT
   reg [31:0] _RAND_0;
