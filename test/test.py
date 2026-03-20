@@ -39,7 +39,7 @@ async def test_project(dut):
     dut.uio_in.value = 3
     
     for i in range(8):
-        dut.ui_in.value = i + 15 + (i * 32)
+        dut.ui_in.value = i + 8 + (i * 32)
         await ClockCycles(dut.clk, 4)
     
 
