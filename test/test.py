@@ -50,7 +50,7 @@ async def test_project(dut):
         disp2_bit7 = int(dut.uo_out.value[7])     # 1 bit
         disp2_lower_bits = int(dut.uio_out.value[7:2])   # 7 bits
 
-        combined = (disp2_bit7 << 7) | disp2_lower_bits
+        combined = (disp2_bit7 << 6) | disp2_lower_bits
 
         dut._log.info(f"uo_out[6:0] = {dut.uo_out.value[6:0]}, disp 2 = {combined}")
         
