@@ -26,10 +26,28 @@ async def test_project(dut):
     dut._log.info("Test project behavior")
 
     # Set the input values you want to test
-    dut.ui_in.value = 20
-    dut.uio_in.value = 30
+    #dut.ui_in.value = 20
+    
+    dut.uio_in.value = 64
 
     # Wait for one clock cycle to see the output values
+
+    for i in range(8):
+        dut.ui_in.value = i + (i * 32)
+        await ClockCycles(dut.clk, 4)
+
+    dut.uio_in.value = 192
+    
+    for i in range(8):
+        dut.ui_in.value = i + 15 + (i * 32)
+        await ClockCycles(dut.clk, 4)
+    
+
+    for i in range(23):
+        dut._log.info(f"uo_out = {dut.uo_out.value} ({int(dut.uo_out.value)})")
+        await ClockCycles(dut.clk, 4)
+        
+    
     await ClockCycles(dut.clk, 1)
 
     # The following assersion is just an example of how to check the output values.
