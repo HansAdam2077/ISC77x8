@@ -103,7 +103,7 @@ module ISC77x8v2(
   reg [3:0] countReg; // @[\\src\\main\\scala\\ISC77x16.scala 88:23]
   reg [31:0] divideReg; // @[\\src\\main\\scala\\ISC77x16.scala 90:24]
   wire [3:0] newCount = countReg + 4'h1; // @[\\src\\main\\scala\\ISC77x16.scala 92:22]
-  wire  check = divideReg == 32'h2faf080; // @[\\src\\main\\scala\\ISC77x16.scala 161:23]
+  wire  check = divideReg == 32'h4; // @[\\src\\main\\scala\\ISC77x16.scala 161:23]
   wire [31:0] _divideReg_T_1 = divideReg + 32'h1; // @[\\src\\main\\scala\\ISC77x16.scala 167:28]
   wire [4:0] _GEN_34 = 4'hf == countReg ? charReg15 : 5'h0; // @[\\src\\main\\scala\\ISC77x16.scala 179:17 195:26 176:32]
   wire [4:0] _GEN_35 = 4'he == countReg ? charReg14 : _GEN_34; // @[\\src\\main\\scala\\ISC77x16.scala 179:17 194:26]
