@@ -20,7 +20,7 @@ module tt_um_ISC77x8_HansAdam2077 (
 
   wire [6:0] io_disp1;
   wire [6:0] io_disp2;
-  wire [3:0] io_an; // unused but required
+ 
 
   // ========================
   // Input mapping
@@ -41,8 +41,7 @@ module tt_um_ISC77x8_HansAdam2077 (
     .io_loadVal(io_loadVal),
     .io_RegPush(io_RegPush),
     .io_disp1(io_disp1),
-    .io_disp2(io_disp2),
-    .io_an(io_an)
+    .io_disp2(io_disp2)
   );
 
   // ========================
@@ -63,6 +62,6 @@ module tt_um_ISC77x8_HansAdam2077 (
   // ========================
   // Unused
   // ========================
-  wire _unused = &{ena, io_an, 1'b0};
+  wire _unused = &{ena, 1'b0};
 
 endmodule
